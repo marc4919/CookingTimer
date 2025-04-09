@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
     @State private var number1 = 0
     @State private var isTimerRunning = false
+    @State private var player: AVAudioPlayer?
+    @State private var selectedSound: String = "start"
+
     
     var body: some View {
     #if DEBUG
@@ -32,7 +36,7 @@ struct ContentView: View {
                     ForEach(0..<60) { index in
                         Text("\(index)").tag(index).font(.title)
                     }
-                }.pickerStyle(.wheel).frame(width: 200, height: 140).disabled(isTimerRunning)
+                }.pickerStyle(.wheel).frame(width: 200, height: 160).disabled(isTimerRunning)
             }
             
             Button {
@@ -55,6 +59,8 @@ struct ContentView: View {
         Task {
             if number1 > 0 {
                 isTimerRunning = true
+                selectedSound = "start"
+                playSound()
             }
             while number1 > 0 && isTimerRunning {
                 number1 -= 1
@@ -69,9 +75,24 @@ struct ContentView: View {
     private func stopTimer() {
         if number1 > 0 && isTimerRunning {
             isTimerRunning = false
+            selectedSound = "stop"
+            playSound()
         }
         
     }
+    
+    private func playSound() {
+        guard let soundURL = Bundle.main.url(forResource: selectedSound, withExtension: "wav") else {
+          return
+        }
+
+        do {
+          player = try AVAudioPlayer(contentsOf: soundURL)
+        } catch {
+          print("Failed to load the sound: \(error)")
+        }
+        player?.play()
+      }
 }
 
 #Preview {

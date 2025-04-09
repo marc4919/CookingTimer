@@ -6,17 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D882A1F42DA707ED00D36C80 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = D882A1ED2DA707ED00D36C80 /* start.wav */; };
+		D882A1F52DA707ED00D36C80 /* stop.wav in Resources */ = {isa = PBXBuildFile; fileRef = D882A1EE2DA707ED00D36C80 /* stop.wav */; };
+		D882A1F62DA707ED00D36C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D882A1F02DA707ED00D36C80 /* Assets.xcassets */; };
+		D882A1F72DA707ED00D36C80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882A1F12DA707ED00D36C80 /* ContentView.swift */; };
+		D882A1F82DA707ED00D36C80 /* CookingTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D882A1C82DA5B5BE00D36C80 /* CookingTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D882A1ED2DA707ED00D36C80 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
+		D882A1EE2DA707ED00D36C80 /* stop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stop.wav; sourceTree = "<group>"; };
+		D882A1F02DA707ED00D36C80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D882A1F12DA707ED00D36C80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTimerApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		D882A1CA2DA5B5BE00D36C80 /* CookingTimer */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CookingTimer;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D882A1C52DA5B5BE00D36C80 /* Frameworks */ = {
@@ -32,7 +37,7 @@
 		D882A1BF2DA5B5BE00D36C80 = {
 			isa = PBXGroup;
 			children = (
-				D882A1CA2DA5B5BE00D36C80 /* CookingTimer */,
+				D882A1F32DA707ED00D36C80 /* CookingTimer */,
 				D882A1C92DA5B5BE00D36C80 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +48,26 @@
 				D882A1C82DA5B5BE00D36C80 /* CookingTimer.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D882A1EF2DA707ED00D36C80 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D882A1ED2DA707ED00D36C80 /* start.wav */,
+				D882A1EE2DA707ED00D36C80 /* stop.wav */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
+		D882A1F32DA707ED00D36C80 /* CookingTimer */ = {
+			isa = PBXGroup;
+			children = (
+				D882A1F12DA707ED00D36C80 /* ContentView.swift */,
+				D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */,
+				D882A1F02DA707ED00D36C80 /* Assets.xcassets */,
+				D882A1EF2DA707ED00D36C80 /* sounds */,
+			);
+			path = CookingTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +84,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				D882A1CA2DA5B5BE00D36C80 /* CookingTimer */,
 			);
 			name = CookingTimer;
 			packageProductDependencies = (
@@ -109,6 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D882A1F42DA707ED00D36C80 /* start.wav in Resources */,
+				D882A1F52DA707ED00D36C80 /* stop.wav in Resources */,
+				D882A1F62DA707ED00D36C80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D882A1F72DA707ED00D36C80 /* ContentView.swift in Sources */,
+				D882A1F82DA707ED00D36C80 /* CookingTimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
