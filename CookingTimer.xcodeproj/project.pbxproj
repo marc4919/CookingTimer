@@ -12,6 +12,7 @@
 		D882A1F62DA707ED00D36C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D882A1F02DA707ED00D36C80 /* Assets.xcassets */; };
 		D882A1F72DA707ED00D36C80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882A1F12DA707ED00D36C80 /* ContentView.swift */; };
 		D882A1F82DA707ED00D36C80 /* CookingTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */; };
+		D882A2082DA71EDE00D36C80 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D882A2072DA71EDE00D36C80 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		D882A1F02DA707ED00D36C80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D882A1F12DA707ED00D36C80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTimerApp.swift; sourceTree = "<group>"; };
+		D882A2072DA71EDE00D36C80 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */,
 				D882A1F02DA707ED00D36C80 /* Assets.xcassets */,
 				D882A1EF2DA707ED00D36C80 /* sounds */,
+				D882A2072DA71EDE00D36C80 /* Launch Screen.storyboard */,
 			);
 			path = CookingTimer;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			files = (
 				D882A1F42DA707ED00D36C80 /* start.wav in Resources */,
 				D882A1F52DA707ED00D36C80 /* stop.wav in Resources */,
+				D882A2082DA71EDE00D36C80 /* Launch Screen.storyboard in Resources */,
 				D882A1F62DA707ED00D36C80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +290,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -314,6 +320,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
