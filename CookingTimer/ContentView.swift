@@ -22,45 +22,48 @@ struct ContentView: View {
         #if DEBUG
             let _ = Self._printChanges()
         #endif
-
-        VStack(spacing: 50) {
-            if isTimerRunning {
-                Text("\(minutes) m \(seconds) s")
-                    .font(.largeTitle)
-                    .padding().frame(width: 400, height: 160)
-            } else {
-
-                HStack {
-                    Picker("Hello, world!", selection: $minutes) {
-                        ForEach(0...59, id: \.self) { index in
-                            Text("\(index)").tag(index).font(.title)
-                        }
-                    }.pickerStyle(.wheel).frame(width: 200, height: 160)
-                        .disabled(isTimerRunning)
-                    Picker("timer", selection: $seconds) {
-                        ForEach(0...59, id: \.self) { index in
-                            Text("\(index)").tag(index).font(.title)
-                        }
-                    }.pickerStyle(.wheel).frame(width: 200, height: 160)
-                        .disabled(isTimerRunning)
+        VStack {
+            
+            VStack(spacing: 50) {
+                if isTimerRunning {
+                    Text("\(minutes) m \(seconds) s")
+                        .font(.largeTitle)
+                        .padding().frame(width: 400, height: 160)
+                } else {
+                    
+                    HStack {
+                        Picker("Hello, world!", selection: $minutes) {
+                            ForEach(0...59, id: \.self) { index in
+                                Text("\(index)").tag(index).font(.title)
+                            }
+                        }.pickerStyle(.wheel).frame(width: 160, height: 160)
+                            .disabled(isTimerRunning)
+                        Picker("timer", selection: $seconds) {
+                            ForEach(0...59, id: \.self) { index in
+                                Text("\(index)").tag(index).font(.title)
+                            }
+                        }.pickerStyle(.wheel).frame(width: 160, height: 160)
+                            .disabled(isTimerRunning)
+                    }
                 }
-            }
-
-            Button {
-                isTimerRunning ? stopTimer() : startTimer()
-            } label: {
-                Label(
-                    isTimerRunning ? "Stop timer" : "Start timer",
-                    systemImage: isTimerRunning ? "xmark.circle" : "timer"
-                )
-                .font(.title2)
-                .foregroundStyle(.white)
-                .padding()
-                .background(isTimerRunning ? .red : .blue, in: Capsule())
-            }
-
-        }
-        .padding()
+                
+                Button {
+                    isTimerRunning ? stopTimer() : startTimer()
+                } label: {
+                    Label(
+                        isTimerRunning ? "Stop timer" : "Start timer",
+                        systemImage: isTimerRunning ? "xmark.circle" : "timer"
+                    )
+                    .font(.title2)
+                    .foregroundStyle(.white)
+                    .padding()
+                    .background(isTimerRunning ? .red : .blue, in: Capsule())
+                }
+                
+            }.padding().frame(maxWidth: 380, maxHeight: 500).background(.white).cornerRadius(20)
+                
+        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.orange)
+        
 
     }
 
