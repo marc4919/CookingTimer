@@ -17,6 +17,10 @@ struct ContentView: View {
     @State private var isTimerRunning = false
     @State private var player: AVAudioPlayer?
     @State private var selectedSound: String = "start"
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    var isLandscape: Bool {
+        verticalSizeClass == .compact
+    }
 
     var body: some View {
         #if DEBUG
@@ -60,7 +64,7 @@ struct ContentView: View {
                     .background(isTimerRunning ? .red : .blue, in: Capsule())
                 }
                 
-            }.padding().frame(maxWidth: 380, maxHeight: 500).background(.white).cornerRadius(20)
+            }.padding().frame(maxWidth: 380, maxHeight: isLandscape ? 350 : 500).background(.white).cornerRadius(20)
                 
         }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.orange)
         
