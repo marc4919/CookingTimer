@@ -5,94 +5,119 @@
 //  Created by Marc Garcia Teodoro on 8/4/25.
 //
 
-import SwiftUI
 import AVFoundation
+import SwiftUI
 
 struct ContentView: View {
-    @State private var number1 = 0
+    @State private var minutes = 0
+    @State private var seconds = 0
+    private var totalSeconds: Int {
+        (minutes * 60) + seconds
+    }
     @State private var isTimerRunning = false
     @State private var player: AVAudioPlayer?
     @State private var selectedSound: String = "start"
 
-    
     var body: some View {
-    #if DEBUG
-        let _ = Self._printChanges()
-    #endif
+        #if DEBUG
+            let _ = Self._printChanges()
+        #endif
 
         VStack(spacing: 50) {
-            HStack {
-                /*Picker("Hello, world!", selection: .constant(0)) {
-                    ForEach(0..<60) { index in
-                        Text("\(index)").tag(index)
-                    }
-                }.pickerStyle(.wheel)
-                Picker("Hello, world!", selection: .constant(0)) {
-                    ForEach(0..<60) { index in
-                        Text("\(index)").tag(index)
-                    }
-                }.pickerStyle(.wheel)*/
-                Picker("timer", selection: $number1) {
-                    ForEach(0..<60) { index in
-                        Text("\(index)").tag(index).font(.title)
-                    }
-                }.pickerStyle(.wheel).frame(width: 200, height: 160).disabled(isTimerRunning)
+            if isTimerRunning {
+                Text("\(minutes) m \(seconds) s")
+                    .font(.largeTitle)
+                    .padding().frame(width: 400, height: 160)
+            } else {
+
+                HStack {
+                    Picker("Hello, world!", selection: $minutes) {
+                        ForEach(0...59, id: \.self) { index in
+                            Text("\(index)").tag(index).font(.title)
+                        }
+                    }.pickerStyle(.wheel).frame(width: 200, height: 160)
+                        .disabled(isTimerRunning)
+                    Picker("timer", selection: $seconds) {
+                        ForEach(0...59, id: \.self) { index in
+                            Text("\(index)").tag(index).font(.title)
+                        }
+                    }.pickerStyle(.wheel).frame(width: 200, height: 160)
+                        .disabled(isTimerRunning)
+                }
             }
-            
+
             Button {
                 isTimerRunning ? stopTimer() : startTimer()
             } label: {
-                Label(isTimerRunning ? "Stop timer" : "Start timer", systemImage: isTimerRunning ? "xmark.circle" : "timer")
-                    .font(.title2)
-                    .foregroundStyle(.white)
-                    .padding()
-                    .background(isTimerRunning ? .red : .blue, in: Capsule())
-            }.disabled(number1 == 0)
-                    
-            
+                Label(
+                    isTimerRunning ? "Stop timer" : "Start timer",
+                    systemImage: isTimerRunning ? "xmark.circle" : "timer"
+                )
+                .font(.title2)
+                .foregroundStyle(.white)
+                .padding()
+                .background(isTimerRunning ? .red : .blue, in: Capsule())
+            }
+
         }
         .padding()
-        
+
     }
-    
+
     private func startTimer() {
         Task {
-            if number1 > 0 {
+            if seconds > 0 || minutes > 0 {
                 isTimerRunning = true
                 selectedSound = "start"
                 playSound()
             }
-            while number1 > 0 && isTimerRunning {
-                number1 -= 1
-                if number1 == 0 {
+            try? await Task.sleep(for: .seconds(0.8))
+            while totalSeconds > 0 && isTimerRunning {
+                if seconds == 0 && minutes > 0 {
+                    minutes -= 1
+                    seconds = 59
+                    print("uno")
+                    try? await Task.sleep(for: .seconds(1))
+                } else if totalSeconds == 1 {
+                    seconds -= 1
                     isTimerRunning = false
+                    stopTimer()
+                    selectedSound = "finish"
+                    playSound()
+                } else {
+                    print("tres")
+                    seconds -= 1
+                    try? await Task.sleep(for: .seconds(1))
                 }
-                try? await Task.sleep(for: .seconds(1))
             }
         }
     }
-    
+
     private func stopTimer() {
-        if number1 > 0 && isTimerRunning {
             isTimerRunning = false
+        if totalSeconds > 0 {
             selectedSound = "stop"
             playSound()
         }
-        
     }
-    
+
     private func playSound() {
-        guard let soundURL = Bundle.main.url(forResource: selectedSound, withExtension: "wav") else {
-          return
+        guard
+            let soundURL = Bundle.main.url(
+                forResource: selectedSound,
+                withExtension: "wav"
+            )
+        else {
+            return
         }
 
         do {
-          player = try AVAudioPlayer(contentsOf: soundURL)
+            player = try AVAudioPlayer(contentsOf: soundURL)
         } catch {
-          print("Failed to load the sound: \(error)")
+            print("Failed to load the sound: \(error)")
         }
         player?.play()
-      }
+    }
 }
 
 #Preview {
