@@ -36,13 +36,13 @@ struct ContentView: View {
                 } else {
                     
                     HStack {
-                        Picker("Hello, world!", selection: $minutes) {
+                        Picker("minutes", selection: $minutes) {
                             ForEach(0...59, id: \.self) { index in
                                 Text("\(index)").tag(index).font(.title)
                             }
                         }.pickerStyle(.wheel).frame(width: 160, height: 160)
                             .disabled(isTimerRunning)
-                        Picker("timer", selection: $seconds) {
+                        Picker("seconds", selection: $seconds) {
                             ForEach(0...59, id: \.self) { index in
                                 Text("\(index)").tag(index).font(.title)
                             }
