@@ -57,7 +57,7 @@ struct ContentView: View {
                     }
                 }
                 
-                Button {
+                Button(role: isTimerRunning ? .cancel : nil) {
                     isTimerRunning ? stopTimer() : startTimer()
                 } label: {
                     Label(
