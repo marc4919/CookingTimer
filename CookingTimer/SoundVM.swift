@@ -9,7 +9,7 @@ import AVFoundation
 
 import AVFoundation
 
-final class SoundVM {
+final class SoundVM: ObservableObject{
     private var player: AVAudioPlayer?
 
     func playSound(selectedSound: String) {

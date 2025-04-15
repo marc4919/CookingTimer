@@ -14,7 +14,7 @@ struct ContentView: View {
         (minutes * 60) + seconds
     }
     @State private var isTimerRunning = false
-    private var soundVM = SoundVM()
+    @StateObject private var soundVM = SoundVM()
     @Environment(\.verticalSizeClass) var verticalSizeClass
     var isLandscape: Bool {
         verticalSizeClass == .compact
