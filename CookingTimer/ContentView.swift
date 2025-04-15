@@ -5,7 +5,6 @@
 //  Created by Marc Garcia Teodoro on 8/4/25.
 //
 
-import AVFoundation
 import SwiftUI
 
 struct ContentView: View {
@@ -15,8 +14,7 @@ struct ContentView: View {
         (minutes * 60) + seconds
     }
     @State private var isTimerRunning = false
-    @State private var player: AVAudioPlayer?
-    @State private var selectedSound: String = "start"
+    private var soundVM = SoundVM(preload: "start")
     @Environment(\.verticalSizeClass) var verticalSizeClass
     var isLandscape: Bool {
         verticalSizeClass == .compact
@@ -81,8 +79,7 @@ struct ContentView: View {
         Task {
             if seconds > 0 || minutes > 0 {
                 isTimerRunning = true
-                selectedSound = "start"
-                playSound()
+                soundVM.playSound(selectedSound: "start")
             }
             try? await Task.sleep(for: .seconds(0.8))
             while totalSeconds > 0 && isTimerRunning {
@@ -95,8 +92,7 @@ struct ContentView: View {
                     seconds -= 1
                     isTimerRunning = false
                     stopTimer()
-                    selectedSound = "finish"
-                    playSound()
+                    soundVM.playSound(selectedSound: "finish")
                 } else {
                     print("tres")
                     seconds -= 1
@@ -109,28 +105,10 @@ struct ContentView: View {
     private func stopTimer() {
             isTimerRunning = false
         if totalSeconds > 0 {
-            selectedSound = "stop"
-            playSound()
+            soundVM.playSound(selectedSound: "stop")
         }
     }
 
-    private func playSound() {
-        guard
-            let soundURL = Bundle.main.url(
-                forResource: selectedSound,
-                withExtension: "wav"
-            )
-        else {
-            return
-        }
-
-        do {
-            player = try AVAudioPlayer(contentsOf: soundURL)
-        } catch {
-            print("Failed to load the sound: \(error)")
-        }
-        player?.play()
-    }
 }
 
 #Preview {
