@@ -14,6 +14,7 @@
 		D882A1F82DA707ED00D36C80 /* CookingTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */; };
 		D882A2082DA71EDE00D36C80 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D882A2072DA71EDE00D36C80 /* Launch Screen.storyboard */; };
 		D882A2122DA8460B00D36C80 /* finish.wav in Resources */ = {isa = PBXBuildFile; fileRef = D882A2112DA8460B00D36C80 /* finish.wav */; };
+		D882A2162DAE63CD00D36C80 /* SoundVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882A2152DAE63C700D36C80 /* SoundVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingTimerApp.swift; sourceTree = "<group>"; };
 		D882A2072DA71EDE00D36C80 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D882A2112DA8460B00D36C80 /* finish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finish.wav; sourceTree = "<group>"; };
+		D882A2152DAE63C700D36C80 /* SoundVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		D882A1F32DA707ED00D36C80 /* CookingTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D882A2152DAE63C700D36C80 /* SoundVM.swift */,
 				D882A1F12DA707ED00D36C80 /* ContentView.swift */,
 				D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */,
 				D882A1F02DA707ED00D36C80 /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D882A1F72DA707ED00D36C80 /* ContentView.swift in Sources */,
+				D882A2162DAE63CD00D36C80 /* SoundVM.swift in Sources */,
 				D882A1F82DA707ED00D36C80 /* CookingTimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +310,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcgtdev.CookingTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -336,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcgtdev.CookingTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
