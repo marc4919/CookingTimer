@@ -86,7 +86,6 @@ struct ContentView: View {
                 if seconds == 0 && minutes > 0 {
                     minutes -= 1
                     seconds = 59
-                    print("uno")
                     try? await Task.sleep(for: .seconds(1))
                 } else if totalSeconds == 1 {
                     seconds -= 1
@@ -94,7 +93,6 @@ struct ContentView: View {
                     stopTimer()
                     soundVM.playSound(selectedSound: "finish")
                 } else {
-                    print("tres")
                     seconds -= 1
                     try? await Task.sleep(for: .seconds(1))
                 }
