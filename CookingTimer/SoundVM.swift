@@ -12,11 +12,6 @@ import AVFoundation
 final class SoundVM {
     private var player: AVAudioPlayer?
 
-    init(preload sound: String) {
-        prepareSound(named: sound)
-        player?.prepareToPlay()
-    }
-
     func playSound(selectedSound: String) {
         prepareSound(named: selectedSound)
         player?.play()
@@ -30,6 +25,7 @@ final class SoundVM {
 
         do {
             player = try AVAudioPlayer(contentsOf: url)
+            player?.prepareToPlay()
         } catch {
             print("Failed to load the sound '\(sound)': \(error)")
         }
