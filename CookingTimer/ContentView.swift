@@ -25,36 +25,29 @@ struct ContentView: View {
             let _ = Self._printChanges()
         #endif
         VStack {
-            
+
             VStack(spacing: 50) {
                 if isTimerRunning {
                     Text("\(minutes) m \(seconds) s")
                         .font(.largeTitle)
                         .padding().frame(width: 400, height: 160)
                 } else {
-                    
+
                     HStack {
-                        Picker("minutes", selection: $minutes) {
-                            ForEach(0...59, id: \.self) { index in
-                                Text("\(index)")
-                                    .tag(index)
-                                    .font(.title)
-                                    .foregroundStyle(.black)
-                            }
-                        }.pickerStyle(.wheel).frame(width: 160, height: 160)
-                            .disabled(isTimerRunning)
-                        Picker("seconds", selection: $seconds) {
-                            ForEach(0...59, id: \.self) { index in
-                                Text("\(index)")
-                                    .tag(index)
-                                    .font(.title)
-                                    .foregroundStyle(.black)
-                            }
-                        }.pickerStyle(.wheel).frame(width: 160, height: 160)
-                            .disabled(isTimerRunning)
+                        PickerView(
+                            pickerSelection: $minutes,
+                            isTimerRunning: isTimerRunning,
+                            pickerLabel: "minutes"
+                        )
+                        PickerView(
+                            pickerSelection: $seconds,
+                            isTimerRunning: isTimerRunning,
+                            pickerLabel: "seconds"
+                        )
                     }
+
                 }
-                
+
                 Button(role: isTimerRunning ? .cancel : nil) {
                     isTimerRunning ? stopTimer() : startTimer()
                 } label: {
@@ -67,11 +60,11 @@ struct ContentView: View {
                     .padding()
                     .background(isTimerRunning ? .red : .blue, in: Capsule())
                 }
-                
-            }.padding().frame(maxWidth: 380, maxHeight: isLandscape ? 350 : 500).background(.white).cornerRadius(20)
-                
+
+            }.padding().frame(maxWidth: 380, maxHeight: isLandscape ? 350 : 500)
+                .background(.white).cornerRadius(20)
+
         }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.orange)
-        
 
     }
 
@@ -101,7 +94,7 @@ struct ContentView: View {
     }
 
     private func stopTimer() {
-            isTimerRunning = false
+        isTimerRunning = false
         if totalSeconds > 0 {
             soundVM.playSound(selectedSound: "stop")
         }
@@ -109,6 +102,6 @@ struct ContentView: View {
 
 }
 
-#Preview {
+#Preview("Standard Preview") {
     ContentView()
 }
