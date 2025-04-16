@@ -47,8 +47,7 @@ struct SettingsView: View {
             getColor()
         }
         .scrollContentBackground(.hidden)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(colorSelection)
+        .backgroundColor(color: colorSelection)
     }
     
     

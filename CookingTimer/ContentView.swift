@@ -65,14 +65,13 @@ struct ContentView: View {
                             systemImage: isTimerRunning
                                 ? "xmark.circle" : "timer"
                         )
-                        .font(.title2)
+                    }.font(.title2)
                         .foregroundStyle(.white)
                         .padding()
                         .background(
                             isTimerRunning ? .red : .blue,
                             in: Capsule()
                         )
-                    }
 
                 }.padding().frame(
                     maxWidth: 380,
@@ -82,9 +81,7 @@ struct ContentView: View {
                         Text("🍴")
                     .font(.system(size: 40)).padding(.top,50)
 
-            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(
-                colorSelection
-            ).toolbar {
+            }.backgroundColor(color: colorSelection).toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink(destination: SettingsView()) {
                         Image(systemName: "gearshape.fill")
