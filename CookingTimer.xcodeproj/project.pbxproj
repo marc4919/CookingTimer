@@ -16,6 +16,7 @@
 		D882A2122DA8460B00D36C80 /* finish.wav in Resources */ = {isa = PBXBuildFile; fileRef = D882A2112DA8460B00D36C80 /* finish.wav */; };
 		D882A2162DAE63CD00D36C80 /* SoundVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D882A2152DAE63C700D36C80 /* SoundVM.swift */; };
 		D893ABD72DAFC3EB005154B4 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABD62DAFC3EB005154B4 /* PickerView.swift */; };
+		D893ABD92DAFE5BE005154B4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABD82DAFE5BE005154B4 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D882A2112DA8460B00D36C80 /* finish.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = finish.wav; sourceTree = "<group>"; };
 		D882A2152DAE63C700D36C80 /* SoundVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundVM.swift; sourceTree = "<group>"; };
 		D893ABD62DAFC3EB005154B4 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		D893ABD82DAFE5BE005154B4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				D882A1EF2DA707ED00D36C80 /* sounds */,
 				D882A2072DA71EDE00D36C80 /* Launch Screen.storyboard */,
 				D893ABD62DAFC3EB005154B4 /* PickerView.swift */,
+				D893ABD82DAFE5BE005154B4 /* SettingsView.swift */,
 			);
 			path = CookingTimer;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D893ABD92DAFE5BE005154B4 /* SettingsView.swift in Sources */,
 				D893ABD72DAFC3EB005154B4 /* PickerView.swift in Sources */,
 				D882A1F72DA707ED00D36C80 /* ContentView.swift in Sources */,
 				D882A2162DAE63CD00D36C80 /* SoundVM.swift in Sources */,

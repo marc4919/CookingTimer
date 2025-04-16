@@ -24,48 +24,62 @@ struct ContentView: View {
         #if DEBUG
             let _ = Self._printChanges()
         #endif
-        VStack {
+        NavigationStack {
+            VStack {
+                VStack(spacing: 50) {
+                    if isTimerRunning {
+                        Text("\(minutes) m \(seconds) s")
+                            .font(.largeTitle)
+                            .padding().frame(width: 400, height: 160)
+                    } else {
 
-            VStack(spacing: 50) {
-                if isTimerRunning {
-                    Text("\(minutes) m \(seconds) s")
-                        .font(.largeTitle)
-                        .padding().frame(width: 400, height: 160)
-                } else {
+                        HStack {
+                            PickerView(
+                                pickerSelection: $minutes,
+                                isTimerRunning: isTimerRunning,
+                                pickerLabel: "minutes"
+                            )
+                            PickerView(
+                                pickerSelection: $seconds,
+                                isTimerRunning: isTimerRunning,
+                                pickerLabel: "seconds"
+                            )
+                        }
 
-                    HStack {
-                        PickerView(
-                            pickerSelection: $minutes,
-                            isTimerRunning: isTimerRunning,
-                            pickerLabel: "minutes"
+                    }
+
+                    Button(role: isTimerRunning ? .cancel : nil) {
+                        isTimerRunning ? stopTimer() : startTimer()
+                    } label: {
+                        Label(
+                            isTimerRunning ? "Stop timer" : "Start timer",
+                            systemImage: isTimerRunning
+                                ? "xmark.circle" : "timer"
                         )
-                        PickerView(
-                            pickerSelection: $seconds,
-                            isTimerRunning: isTimerRunning,
-                            pickerLabel: "seconds"
+                        .font(.title2)
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background(
+                            isTimerRunning ? .red : .blue,
+                            in: Capsule()
                         )
                     }
 
-                }
-
-                Button(role: isTimerRunning ? .cancel : nil) {
-                    isTimerRunning ? stopTimer() : startTimer()
-                } label: {
-                    Label(
-                        isTimerRunning ? "Stop timer" : "Start timer",
-                        systemImage: isTimerRunning ? "xmark.circle" : "timer"
-                    )
-                    .font(.title2)
-                    .foregroundStyle(.white)
-                    .padding()
-                    .background(isTimerRunning ? .red : .blue, in: Capsule())
-                }
-
-            }.padding().frame(maxWidth: 380, maxHeight: isLandscape ? 350 : 500)
+                }.padding().frame(
+                    maxWidth: 380,
+                    maxHeight: isLandscape ? 350 : 500
+                )
                 .background(.white).cornerRadius(20)
 
-        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(.orange)
-
+            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(
+                .orange
+            ).toolbar {
+                NavigationLink(destination: SettingsView()) {
+                    Image(systemName: "gearshape.fill")
+                }
+            }.navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Cooking Timer")
+        }
     }
 
     private func startTimer() {
