@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var minutes = 0
-    @State private var seconds = 0
-    private var totalSeconds: Int {
-        (minutes * 60) + seconds
-    }
-    @State private var isTimerRunning = false
-    @StateObject private var soundVM = SoundVM()
+    @State private var timerVM = TimerVM()
     @Environment(\.verticalSizeClass) var verticalSizeClass
     var isLandscape: Bool {
         verticalSizeClass == .compact
@@ -36,40 +30,40 @@ struct ContentView: View {
         NavigationStack {
             ZStack(alignment: .top) {
                 VStack(spacing: 50) {
-                    if isTimerRunning {
-                        Text("\(minutes) m \(seconds) s")
+                    if timerVM.isTimerRunning {
+                        Text("\(timerVM.minutes) m \(timerVM.seconds) s")
                             .font(.largeTitle)
                             .padding().frame(width: 400, height: 160)
                     } else {
 
                         HStack {
                             PickerView(
-                                pickerSelection: $minutes,
-                                isTimerRunning: isTimerRunning,
+                                pickerSelection: $timerVM.minutes,
+                                isTimerRunning: timerVM.isTimerRunning,
                                 pickerLabel: "minutes"
                             )
                             PickerView(
-                                pickerSelection: $seconds,
-                                isTimerRunning: isTimerRunning,
+                                pickerSelection: $timerVM.seconds,
+                                isTimerRunning: timerVM.isTimerRunning,
                                 pickerLabel: "seconds"
                             )
                         }
 
                     }
 
-                    Button(role: isTimerRunning ? .cancel : nil) {
-                        isTimerRunning ? stopTimer() : startTimer()
+                    Button(role: timerVM.isTimerRunning ? .cancel : nil) {
+                        timerVM.isTimerRunning ? timerVM.stopTimer() : timerVM.startTimer()
                     } label: {
                         Label(
-                            isTimerRunning ? "Stop timer" : "Start timer",
-                            systemImage: isTimerRunning
+                            timerVM.isTimerRunning ? "Stop timer" : "Start timer",
+                            systemImage: timerVM.isTimerRunning
                                 ? "xmark.circle" : "timer"
                         )
                     }.font(.title2)
                         .foregroundStyle(.white)
                         .padding()
                         .background(
-                            isTimerRunning ? .red : .blue,
+                            timerVM.isTimerRunning ? .red : .blue,
                             in: Capsule()
                         )
 
@@ -89,38 +83,6 @@ struct ContentView: View {
                 }
             }.navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Cooking Timer")
-        }
-    }
-
-    private func startTimer() {
-        Task {
-            if seconds > 0 || minutes > 0 {
-                isTimerRunning = true
-                soundVM.playSound(selectedSound: "start")
-            }
-            try? await Task.sleep(for: .seconds(0.8))
-            while totalSeconds > 0 && isTimerRunning {
-                if seconds == 0 && minutes > 0 {
-                    minutes -= 1
-                    seconds = 59
-                    try? await Task.sleep(for: .seconds(1))
-                } else if totalSeconds == 1 {
-                    seconds -= 1
-                    isTimerRunning = false
-                    stopTimer()
-                    soundVM.playSound(selectedSound: "finish")
-                } else {
-                    seconds -= 1
-                    try? await Task.sleep(for: .seconds(1))
-                }
-            }
-        }
-    }
-
-    private func stopTimer() {
-        isTimerRunning = false
-        if totalSeconds > 0 {
-            soundVM.playSound(selectedSound: "stop")
         }
     }
 
