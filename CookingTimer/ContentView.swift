@@ -34,7 +34,7 @@ struct ContentView: View {
             let _ = Self._printChanges()
         #endif
         NavigationStack {
-            VStack {
+            ZStack(alignment: .top) {
                 VStack(spacing: 50) {
                     if isTimerRunning {
                         Text("\(minutes) m \(seconds) s")
@@ -79,6 +79,8 @@ struct ContentView: View {
                     maxHeight: isLandscape ? 350 : 500
                 )
                 .background(.white).cornerRadius(20)
+                        Text("🍴")
+                    .font(.system(size: 40)).padding(.top,50)
 
             }.frame(maxWidth: .infinity, maxHeight: .infinity).background(
                 colorSelection
