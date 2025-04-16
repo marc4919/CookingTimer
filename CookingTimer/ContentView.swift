@@ -19,6 +19,15 @@ struct ContentView: View {
     var isLandscape: Bool {
         verticalSizeClass == .compact
     }
+    @AppStorage("backgroundColorComponents") private var backgroundColorComponents: String = "1.0,0.584,0.0,1.0"
+    private var colorSelection: Color {
+            let comps = backgroundColorComponents
+                .split(separator: ",")
+                .compactMap { Double($0) }
+            guard comps.count >= 3 else { return .orange }
+            let (r, g, b, a) = (comps[0], comps[1], comps[2], comps.count >= 4 ? comps[3] : 1.0)
+            return Color(.sRGB, red: r, green: g, blue: b, opacity: a)
+        }
 
     var body: some View {
         #if DEBUG
@@ -72,10 +81,12 @@ struct ContentView: View {
                 .background(.white).cornerRadius(20)
 
             }.frame(maxWidth: .infinity, maxHeight: .infinity).background(
-                .orange
+                colorSelection
             ).toolbar {
-                NavigationLink(destination: SettingsView()) {
-                    Image(systemName: "gearshape.fill")
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gearshape.fill")
+                    }
                 }
             }.navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Cooking Timer")
