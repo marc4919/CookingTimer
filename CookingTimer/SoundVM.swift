@@ -7,9 +7,7 @@
 
 import AVFoundation
 
-import AVFoundation
-
-final class SoundVM: ObservableObject{
+final class SoundVM: ObservableObject {
     private var player: AVAudioPlayer?
 
     func playSound(selectedSound: String) {
@@ -18,7 +16,9 @@ final class SoundVM: ObservableObject{
     }
 
     private func prepareSound(named sound: String) {
-        guard let url = Bundle.main.url(forResource: sound, withExtension: "wav") else {
+        guard
+            let url = Bundle.main.url(forResource: sound, withExtension: "wav")
+        else {
             print("Sound file '\(sound)' not found")
             return
         }
