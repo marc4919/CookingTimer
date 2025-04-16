@@ -51,21 +51,9 @@ struct ContentView: View {
 
                     }
 
-                    Button(role: timerVM.isTimerRunning ? .cancel : nil) {
+                    RunTimeButtonView(isTimerRunning: timerVM.isTimerRunning){
                         timerVM.isTimerRunning ? timerVM.stopTimer() : timerVM.startTimer()
-                    } label: {
-                        Label(
-                            timerVM.isTimerRunning ? "Stop timer" : "Start timer",
-                            systemImage: timerVM.isTimerRunning
-                                ? "xmark.circle" : "timer"
-                        )
-                    }.font(.title2)
-                        .foregroundStyle(.white)
-                        .padding()
-                        .background(
-                            timerVM.isTimerRunning ? .red : .blue,
-                            in: Capsule()
-                        )
+                    }
 
                 }.padding().frame(
                     maxWidth: 380,
@@ -91,3 +79,5 @@ struct ContentView: View {
 #Preview("Standard Preview") {
     ContentView()
 }
+
+

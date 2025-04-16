@@ -19,6 +19,7 @@
 		D893ABD92DAFE5BE005154B4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABD82DAFE5BE005154B4 /* SettingsView.swift */; };
 		D893ABDC2DB0696D005154B4 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABDB2DB06965005154B4 /* Background.swift */; };
 		D893ABDE2DB06DED005154B4 /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABDD2DB06DE3005154B4 /* TimerVM.swift */; };
+		D893ABE22DB07537005154B4 /* RunTimeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		D893ABD82DAFE5BE005154B4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D893ABDB2DB06965005154B4 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		D893ABDD2DB06DE3005154B4 /* TimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
+		D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				D893ABDA2DB068C8005154B4 /* Modifiers */,
 				D882A1F12DA707ED00D36C80 /* ContentView.swift */,
+				D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */,
 				D893ABD82DAFE5BE005154B4 /* SettingsView.swift */,
 				D893ABD62DAFC3EB005154B4 /* PickerView.swift */,
 				D882A2152DAE63C700D36C80 /* SoundVM.swift */,
@@ -177,6 +180,7 @@
 			files = (
 				D893ABD92DAFE5BE005154B4 /* SettingsView.swift in Sources */,
 				D893ABD72DAFC3EB005154B4 /* PickerView.swift in Sources */,
+				D893ABE22DB07537005154B4 /* RunTimeButtonView.swift in Sources */,
 				D882A1F72DA707ED00D36C80 /* ContentView.swift in Sources */,
 				D882A2162DAE63CD00D36C80 /* SoundVM.swift in Sources */,
 				D882A1F82DA707ED00D36C80 /* CookingTimerApp.swift in Sources */,
