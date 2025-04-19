@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var timerVM = TimerVM()
+    @AppStorage("emoji_selected") var emojiSelected: String = "🍲"
+    @Environment(ThemeSettings.self) var themeSettings
     @Environment(\.verticalSizeClass) var verticalSizeClass
     var isLandscape: Bool {
         verticalSizeClass == .compact
     }
-    @Environment(ThemeSettings.self) var themeSettings
+
 
     var body: some View {
         #if DEBUG
@@ -52,8 +54,14 @@ struct ContentView: View {
                     maxHeight: isLandscape ? 350 : 500
                 )
                 .background(.white).cornerRadius(20)
-                        Text("🍴")
-                    .font(.system(size: 40)).padding(.top,50)
+                        Text(emojiSelected)
+                    .font(.system(size: 40)).padding(.top,50)            .offset(x: timerVM.isTimerRunning ? -5 : 5)
+                    .animation(
+                        timerVM.isTimerRunning
+                            ? Animation.linear(duration: 0.60).repeatForever(autoreverses: true)
+                            : .default,
+                        value: timerVM.isTimerRunning
+                    )
 
             }.backgroundColor(color: themeSettings.mainColor).toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
