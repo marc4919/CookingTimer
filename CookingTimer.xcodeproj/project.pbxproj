@@ -20,7 +20,7 @@
 		D893ABDC2DB0696D005154B4 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABDB2DB06965005154B4 /* Background.swift */; };
 		D893ABDE2DB06DED005154B4 /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABDD2DB06DE3005154B4 /* TimerVM.swift */; };
 		D893ABE22DB07537005154B4 /* RunTimeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */; };
-		D893ABE42DB0797B005154B4 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABE32DB07973005154B4 /* ThemeSettings.swift */; };
+		D8C875942DB3B58B003F12F1 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C875932DB3B58B003F12F1 /* ThemeSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 		D893ABDB2DB06965005154B4 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		D893ABDD2DB06DE3005154B4 /* TimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
 		D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeButtonView.swift; sourceTree = "<group>"; };
-		D893ABE32DB07973005154B4 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
+		D8C875932DB3B58B003F12F1 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +88,7 @@
 				D893ABD62DAFC3EB005154B4 /* PickerView.swift */,
 				D882A2152DAE63C700D36C80 /* SoundVM.swift */,
 				D893ABDD2DB06DE3005154B4 /* TimerVM.swift */,
+				D8C875932DB3B58B003F12F1 /* ThemeSettings.swift */,
 				D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */,
 				D882A1F02DA707ED00D36C80 /* Assets.xcassets */,
 				D882A1EF2DA707ED00D36C80 /* sounds */,
@@ -99,7 +100,6 @@
 		D893ABDA2DB068C8005154B4 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				D893ABE32DB07973005154B4 /* ThemeSettings.swift */,
 				D893ABDB2DB06965005154B4 /* Background.swift */,
 			);
 			path = Modifiers;
@@ -184,7 +184,7 @@
 				D893ABD92DAFE5BE005154B4 /* SettingsView.swift in Sources */,
 				D893ABD72DAFC3EB005154B4 /* PickerView.swift in Sources */,
 				D893ABE22DB07537005154B4 /* RunTimeButtonView.swift in Sources */,
-				D893ABE42DB0797B005154B4 /* ThemeSettings.swift in Sources */,
+				D8C875942DB3B58B003F12F1 /* ThemeSettings.swift in Sources */,
 				D882A1F72DA707ED00D36C80 /* ContentView.swift in Sources */,
 				D882A2162DAE63CD00D36C80 /* SoundVM.swift in Sources */,
 				D882A1F82DA707ED00D36C80 /* CookingTimerApp.swift in Sources */,
