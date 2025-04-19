@@ -57,7 +57,6 @@
 		D882A1BF2DA5B5BE00D36C80 = {
 			isa = PBXGroup;
 			children = (
-				D89584B82DB3C3D100F03AEB /* Localizable.xcstrings */,
 				D882A1F32DA707ED00D36C80 /* CookingTimer */,
 				D882A1C92DA5B5BE00D36C80 /* Products */,
 			);
@@ -84,6 +83,7 @@
 		D882A1F32DA707ED00D36C80 /* CookingTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D89584B82DB3C3D100F03AEB /* Localizable.xcstrings */,
 				D893ABDA2DB068C8005154B4 /* Modifiers */,
 				D882A1F12DA707ED00D36C80 /* ContentView.swift */,
 				D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */,
