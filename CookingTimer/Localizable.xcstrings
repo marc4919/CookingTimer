@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : ""
+          }
+        }
+      }
     },
     "%lld" : {
 
@@ -16,9 +23,6 @@
           }
         }
       }
-    },
-    "🍴" : {
-
     },
     "Are you sure you want to reset preferences?" : {
       "localizations" : {
@@ -51,7 +55,14 @@
       }
     },
     "Cooking Timer" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temporizador de Cocina"
+          }
+        }
+      }
     },
     "Default" : {
       "localizations" : {
@@ -100,6 +111,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleccionar color principal"
+          }
+        }
+      }
+    },
+    "Sounds enabled" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable sounds (start/stop and timer end)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activar sonidos (empezar/parar y fin del temporizador)"
           }
         }
       }
