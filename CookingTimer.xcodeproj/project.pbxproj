@@ -20,6 +20,7 @@
 		D893ABDC2DB0696D005154B4 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABDB2DB06965005154B4 /* Background.swift */; };
 		D893ABDE2DB06DED005154B4 /* TimerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABDD2DB06DE3005154B4 /* TimerVM.swift */; };
 		D893ABE22DB07537005154B4 /* RunTimeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */; };
+		D89584B92DB3C3D100F03AEB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D89584B82DB3C3D100F03AEB /* Localizable.xcstrings */; };
 		D8C875942DB3B58B003F12F1 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C875932DB3B58B003F12F1 /* ThemeSettings.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		D893ABDB2DB06965005154B4 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		D893ABDD2DB06DE3005154B4 /* TimerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVM.swift; sourceTree = "<group>"; };
 		D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeButtonView.swift; sourceTree = "<group>"; };
+		D89584B82DB3C3D100F03AEB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D8C875932DB3B58B003F12F1 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +57,7 @@
 		D882A1BF2DA5B5BE00D36C80 = {
 			isa = PBXGroup;
 			children = (
+				D89584B82DB3C3D100F03AEB /* Localizable.xcstrings */,
 				D882A1F32DA707ED00D36C80 /* CookingTimer */,
 				D882A1C92DA5B5BE00D36C80 /* Products */,
 			);
@@ -148,6 +151,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = D882A1BF2DA5B5BE00D36C80;
 			minimizedProjectReferenceProxies = 1;
@@ -168,6 +172,7 @@
 			files = (
 				D882A1F42DA707ED00D36C80 /* start.wav in Resources */,
 				D882A1F52DA707ED00D36C80 /* stop.wav in Resources */,
+				D89584B92DB3C3D100F03AEB /* Localizable.xcstrings in Resources */,
 				D882A2122DA8460B00D36C80 /* finish.wav in Resources */,
 				D882A2082DA71EDE00D36C80 /* Launch Screen.storyboard in Resources */,
 				D882A1F62DA707ED00D36C80 /* Assets.xcassets in Resources */,
@@ -256,6 +261,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -313,6 +319,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
