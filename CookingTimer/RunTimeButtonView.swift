@@ -15,23 +15,25 @@ struct RunTimeButtonView: View {
         Button(role: isTimerRunning ? .cancel : nil) {
             action()
         } label: {
-            Label(
-                isTimerRunning ? "Stop timer" : "Start timer",
-                systemImage: isTimerRunning
-                ? "xmark.circle" : "timer"
-            )
+            Label {
+                Text(isTimerRunning ? "Stop timer" : "Start timer")
+            } icon: {
+                Image(systemName: isTimerRunning ? "xmark.circle" : "timer")
+            }
         }.font(.title2)
             .foregroundStyle(.white)
             .padding()
             .background(
                 isTimerRunning ? .red : .blue,
                 in: Capsule()
-            )
+            ).scaleEffect(isTimerRunning ? 1.1 : 1.0)
+            .animation(.spring(), value: isTimerRunning)
+
     }
 }
 
 #Preview {
     RunTimeButtonView(isTimerRunning: false) {
-            print("Start tapped")
+        print("Start tapped")
     }
 }
