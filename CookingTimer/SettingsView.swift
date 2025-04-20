@@ -18,16 +18,21 @@ struct SettingsView: View {
         @Bindable var theme = themeSettings
 
         Form {
-            Section(header: Text("Preferences", comment: "The title of main settings section")) {
+            Section(
+                header: Text(
+                    "Preferences",
+                    comment: "The title of main settings section"
+                )
+            ) {
                 ColorPicker("Select main color", selection: $theme.mainColor)
                 Toggle(isOn: $isSoundEnabled) {
-                    Text("Sounds enabled")
+                    Text("Sounds enabled", comment: "The title of sound setting")
                 }
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Select emoji")
+                    Text("Select emoji", comment: "The title of emoji setting")
                         .font(.caption)
 
-                    Picker("", selection: $emojiSelected) {
+                    Picker("Select emoji", selection: $emojiSelected) {
                         ForEach(emojiOptions, id: \.self) {
                             Text($0)
                         }
@@ -36,29 +41,29 @@ struct SettingsView: View {
                 }
 
             }
-            Section(header: Text("Default")) {
+            Section(header: Text("Default", comment: "The title of default settings section")) {
                 Button("Back to default preferences") {
                     isShowingResetDialog = true
+                }
+                .confirmationDialog(
+                    "Are you sure you want to reset preferences?",
+                    isPresented: $isShowingResetDialog,
+                    titleVisibility: .visible
+                ) {
+                    Button("Reset preferences", role: .destructive) {
+                        theme.mainColor = .orange
+                        emojiSelected = "🍲"
                     }
-                    .confirmationDialog(
-                      "Are you sure you want to reset preferences?",
-                      isPresented: $isShowingResetDialog,
-                      titleVisibility: .visible
-                    ) {
-                      Button("Reset preferences", role: .destructive) {
-                          theme.mainColor = .orange
-                          emojiSelected = "🍲"
-                     }
-                      Button("Cancel", role: .cancel) {
-                          isShowingResetDialog = false
-                      }
+                    Button("Cancel", role: .cancel) {
+                        isShowingResetDialog = false
                     }
+                }
             }
         }
         .scrollContentBackground(.hidden)
         .backgroundColor(color: theme.mainColor)
     }
-    
+
 }
 
 #Preview {

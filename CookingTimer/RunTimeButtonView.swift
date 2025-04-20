@@ -10,7 +10,7 @@ import SwiftUI
 struct RunTimeButtonView: View {
     var isTimerRunning: Bool = false
     var action: () -> Void
-    
+
     var body: some View {
         Button(role: isTimerRunning ? .cancel : nil) {
             action()

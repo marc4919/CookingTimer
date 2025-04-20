@@ -15,9 +15,9 @@ final class TimerVM {
     var isTimerRunning: Bool = false
     var isSoundEnabled: Bool {
         if UserDefaults.standard.object(forKey: "is_sound_enabled") == nil {
-                return true
-            } else {
-                return UserDefaults.standard.bool(forKey: "is_sound_enabled")
+            return true
+        } else {
+            return UserDefaults.standard.bool(forKey: "is_sound_enabled")
         }
     }
     private var soundVM = SoundVM()

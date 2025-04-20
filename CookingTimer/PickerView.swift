@@ -15,7 +15,7 @@ struct PickerView: View {
     var body: some View {
         Picker(pickerLabel, selection: $pickerSelection) {
             ForEach(0...59, id: \.self) { index in
-                Text("\(index)")
+                Text("\(index)", comment: "Timer value")
                     .tag(index)
                     .font(.title)
                     .foregroundStyle(.black)
