@@ -13,14 +13,15 @@ struct MovingEmojiView: View {
 
     var body: some View {
         Text(emojiSelected)
-            .font(.system(size: 40)).padding(.top, 50).offset(
-                x: isTimerRunning ? -5 : 5
-            )
+            .font(.largeTitle) // Soporta Dynamic Type
+            .foregroundColor(.primary) // Buen contraste automático
+            .lineLimit(1)
+            .minimumScaleFactor(0.5)
+            .padding(.top, 50)
+            .offset(x: isTimerRunning ? -5 : 5)
             .animation(
                 isTimerRunning
-                    ? Animation.linear(duration: 0.60).repeatForever(
-                        autoreverses: true
-                    )
+                    ? Animation.linear(duration: 0.60).repeatForever(autoreverses: true)
                     : .default,
                 value: isTimerRunning
             )

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D84130512DB50C6D00081521 /* MovingEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84130502DB50C6D00081521 /* MovingEmojiView.swift */; };
+		D84130572DB5257100081521 /* ColorContrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84130562DB5256A00081521 /* ColorContrast.swift */; };
 		D882A1F42DA707ED00D36C80 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = D882A1ED2DA707ED00D36C80 /* start.wav */; };
 		D882A1F52DA707ED00D36C80 /* stop.wav in Resources */ = {isa = PBXBuildFile; fileRef = D882A1EE2DA707ED00D36C80 /* stop.wav */; };
 		D882A1F62DA707ED00D36C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D882A1F02DA707ED00D36C80 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		D84130502DB50C6D00081521 /* MovingEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingEmojiView.swift; sourceTree = "<group>"; };
+		D84130562DB5256A00081521 /* ColorContrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContrast.swift; sourceTree = "<group>"; };
 		D882A1C82DA5B5BE00D36C80 /* CookingTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookingTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D882A1ED2DA707ED00D36C80 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
 		D882A1EE2DA707ED00D36C80 /* stop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stop.wav; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D84130552DB5255B00081521 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D84130562DB5256A00081521 /* ColorContrast.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D882A1BF2DA5B5BE00D36C80 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				D882A1F02DA707ED00D36C80 /* Assets.xcassets */,
+				D84130552DB5255B00081521 /* Extensions */,
 				D84130542DB5141600081521 /* Resources */,
 				D84130532DB5115900081521 /* ViewModels */,
 				D84130522DB5111300081521 /* Components */,
@@ -221,6 +232,7 @@
 				D84130512DB50C6D00081521 /* MovingEmojiView.swift in Sources */,
 				D882A2162DAE63CD00D36C80 /* SoundVM.swift in Sources */,
 				D882A1F82DA707ED00D36C80 /* CookingTimerApp.swift in Sources */,
+				D84130572DB5257100081521 /* ColorContrast.swift in Sources */,
 				D893ABDE2DB06DED005154B4 /* TimerVM.swift in Sources */,
 				D893ABDC2DB0696D005154B4 /* Background.swift in Sources */,
 			);

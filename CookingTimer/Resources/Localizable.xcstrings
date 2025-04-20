@@ -59,6 +59,7 @@
       }
     },
     "Cooking Timer" : {
+      "comment" : "The title of the main screen",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -117,6 +118,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seleccionar color principal"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
           }
         }
       }

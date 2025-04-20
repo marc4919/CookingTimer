@@ -63,7 +63,7 @@ struct ContentView: View {
             }.backgroundColor(color: themeSettings.mainColor).toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "gearshape.fill")
+                        Image(systemName: "gearshape.fill").accessibilityLabel("Settings")
                     }
                 }
             }.navigationBarTitleDisplayMode(.inline)

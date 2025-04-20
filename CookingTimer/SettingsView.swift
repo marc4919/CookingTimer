@@ -23,6 +23,8 @@ struct SettingsView: View {
                     "Preferences",
                     comment: "The title of main settings section"
                 )
+                .font(.headline)
+                .foregroundStyle(theme.mainColor.contrastingTextColor)
             ) {
                 ColorPicker("Select main color", selection: $theme.mainColor)
                 Toggle(isOn: $isSoundEnabled) {
@@ -30,7 +32,6 @@ struct SettingsView: View {
                 }
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Select emoji", comment: "The title of emoji setting")
-                        .font(.caption)
 
                     Picker("Select emoji", selection: $emojiSelected) {
                         ForEach(emojiOptions, id: \.self) {
@@ -41,10 +42,12 @@ struct SettingsView: View {
                 }
 
             }
-            Section(header: Text("Default", comment: "The title of default settings section")) {
+            Section(header: Text("Default", comment: "The title of default settings section")
+                .font(.headline)
+                .foregroundStyle(theme.mainColor.contrastingTextColor)) {
                 Button("Back to default preferences") {
                     isShowingResetDialog = true
-                }
+                }.foregroundColor(.red)
                 .confirmationDialog(
                     "Are you sure you want to reset preferences?",
                     isPresented: $isShowingResetDialog,
@@ -53,6 +56,7 @@ struct SettingsView: View {
                     Button("Reset preferences", role: .destructive) {
                         theme.mainColor = .orange
                         emojiSelected = "🍲"
+                        isSoundEnabled = true
                     }
                     Button("Cancel", role: .cancel) {
                         isShowingResetDialog = false
