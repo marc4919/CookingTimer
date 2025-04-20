@@ -54,14 +54,11 @@ struct ContentView: View {
                     maxHeight: isLandscape ? 350 : 500
                 )
                 .background(.white).cornerRadius(20)
-                        Text(emojiSelected)
-                    .font(.system(size: 40)).padding(.top,50)            .offset(x: timerVM.isTimerRunning ? -5 : 5)
-                    .animation(
-                        timerVM.isTimerRunning
-                            ? Animation.linear(duration: 0.60).repeatForever(autoreverses: true)
-                            : .default,
-                        value: timerVM.isTimerRunning
-                    )
+                
+                MovingEmojiView(
+                    emojiSelected: emojiSelected,
+                    isTimerRunning: timerVM.isTimerRunning
+                )
 
             }.backgroundColor(color: themeSettings.mainColor).toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
