@@ -56,6 +56,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D84130522DB5111300081521 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */,
+				D893ABD62DAFC3EB005154B4 /* PickerView.swift */,
+				D84130502DB50C6D00081521 /* MovingEmojiView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D84130532DB5115900081521 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D893ABDD2DB06DE3005154B4 /* TimerVM.swift */,
+				D882A2152DAE63C700D36C80 /* SoundVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D84130542DB5141600081521 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D89584B82DB3C3D100F03AEB /* Localizable.xcstrings */,
+				D882A1EF2DA707ED00D36C80 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D882A1BF2DA5B5BE00D36C80 = {
 			isa = PBXGroup;
 			children = (
@@ -72,32 +100,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D882A1EF2DA707ED00D36C80 /* sounds */ = {
+		D882A1EF2DA707ED00D36C80 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
 				D882A1ED2DA707ED00D36C80 /* start.wav */,
 				D882A1EE2DA707ED00D36C80 /* stop.wav */,
 				D882A2112DA8460B00D36C80 /* finish.wav */,
 			);
-			path = sounds;
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		D882A1F32DA707ED00D36C80 /* CookingTimer */ = {
 			isa = PBXGroup;
 			children = (
-				D89584B82DB3C3D100F03AEB /* Localizable.xcstrings */,
+				D882A1F02DA707ED00D36C80 /* Assets.xcassets */,
+				D84130542DB5141600081521 /* Resources */,
+				D84130532DB5115900081521 /* ViewModels */,
+				D84130522DB5111300081521 /* Components */,
 				D893ABDA2DB068C8005154B4 /* Modifiers */,
 				D882A1F12DA707ED00D36C80 /* ContentView.swift */,
-				D893ABE12DB07537005154B4 /* RunTimeButtonView.swift */,
-				D84130502DB50C6D00081521 /* MovingEmojiView.swift */,
 				D893ABD82DAFE5BE005154B4 /* SettingsView.swift */,
-				D893ABD62DAFC3EB005154B4 /* PickerView.swift */,
-				D882A2152DAE63C700D36C80 /* SoundVM.swift */,
-				D893ABDD2DB06DE3005154B4 /* TimerVM.swift */,
 				D8C875932DB3B58B003F12F1 /* ThemeSettings.swift */,
 				D882A1F22DA707ED00D36C80 /* CookingTimerApp.swift */,
-				D882A1F02DA707ED00D36C80 /* Assets.xcassets */,
-				D882A1EF2DA707ED00D36C80 /* sounds */,
 				D882A2072DA71EDE00D36C80 /* Launch Screen.storyboard */,
 			);
 			path = CookingTimer;

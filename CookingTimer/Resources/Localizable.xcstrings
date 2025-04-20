@@ -1,24 +1,28 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
+    "%lld" : {
+      "comment" : "Timer value",
       "localizations" : {
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : ""
+            "state" : "translated",
+            "value" : "%lld"
           }
         }
       }
-    },
-    "%lld" : {
-
     },
     "%lld m %lld s" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "%1$lld m %2$lld s"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "%1$lld m %2$lld s"
           }
         }
@@ -65,6 +69,7 @@
       }
     },
     "Default" : {
+      "comment" : "The title of default settings section",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -96,6 +101,7 @@
       }
     },
     "Select emoji" : {
+      "comment" : "The title of emoji setting",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -116,6 +122,7 @@
       }
     },
     "Sounds enabled" : {
+      "comment" : "The title of sound setting",
       "localizations" : {
         "en" : {
           "stringUnit" : {
