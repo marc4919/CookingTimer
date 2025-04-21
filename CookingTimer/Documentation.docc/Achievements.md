@@ -1,6 +1,12 @@
-# Key Concepts
+# Achievements
 
 Main achievements of this project
+
+@Metadata {
+    @PageImage(purpose: card,
+               source: "achievements",
+               alt: "Project achievements")
+}
 
 ## This project demonstrates…
 

@@ -8,18 +8,12 @@ SwiftUI project that implements a kitchen timer with various customizable settin
                alt: "app logo")
 }
 
-### View Models
-
 @Links(visualStyle: detailedGrid){
-    - <doc:KeyConcepts>
+    - <doc:Achievements>
+    - <doc:AppSections>
 }
 
-## Overview
-
-Use of @State and @Observable to manage application state.
-MVVM architecture with reusable components.
-
-## Topics
+### View Models
 
 - ``TimerVM``
 - ``SoundVM``
@@ -28,7 +22,7 @@ MVVM architecture with reusable components.
 
 - ``BackgroundColor``
 
-### Main Views
+### Views
 
 - ``ContentView``
 - ``SettingsView``
