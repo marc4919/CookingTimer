@@ -13,8 +13,8 @@ struct MovingEmojiView: View {
 
     var body: some View {
         Text(emojiSelected)
-            .font(.largeTitle) // Soporta Dynamic Type
-            .foregroundColor(.primary) // Buen contraste automático
+            .font(.largeTitle)
+            .foregroundColor(.primary)
             .lineLimit(1)
             .minimumScaleFactor(0.5)
             .padding(.top, 50)
