@@ -6,6 +6,9 @@ Main achievements of this project
     @PageImage(purpose: card,
                source: "achievements",
                alt: "Project achievements")
+    @PageImage(purpose: icon,
+               source: "achievements",
+               alt: "Project achievements")
 }
 
 ## This project demonstrates…

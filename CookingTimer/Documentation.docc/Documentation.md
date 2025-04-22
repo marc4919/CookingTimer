@@ -8,19 +8,15 @@ SwiftUI project that implements a kitchen timer with various customizable settin
                alt: "app logo")
 }
 
-@Links(visualStyle: detailedGrid){
+
+
+  @Links(visualStyle: detailedGrid) {
     - <doc:Achievements>
     - <doc:AppSections>
-}
+  }
 
-### View Models
 
-- ``TimerVM``
-- ``SoundVM``
-
-### Extensions
-
-- ``BackgroundColor``
+## Topics
 
 ### Views
 
@@ -32,3 +28,17 @@ SwiftUI project that implements a kitchen timer with various customizable settin
 - ``PickerView``
 - ``RunTimeButtonView``
 - ``MovingEmojiView``
+
+### View Models
+
+- ``TimerVM``
+- ``SoundVM``
+
+### Extensions
+
+- ``BackgroundColor``
+
+### Environment
+
+- ``ThemeSettings``
+- ``CookingTimerApp``
