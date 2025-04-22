@@ -2,6 +2,10 @@
 
 This is a SwiftUI project that implements a kitchen timer with various customizable settings.
 
+Cooking Timer's Swift-DocC documentation [is available here.](https://marc4919.github.io/CookingTimer/documentation/cookingtimer/)
+
+
+
 ## 🧠 Key Concepts
 - Use of `@State` and `@Observable` to manage application state.
 - MVVM architecture with reusable components.
